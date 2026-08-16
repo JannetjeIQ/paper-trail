@@ -17,24 +17,6 @@ It ships with the job system. This business never wired it up, because quote out
 tracked elsewhere by decision. The field is not neglected, it is **unused**, and those
 are different states with the same symptom.
 
-## The contradiction that closes it
-
-You do not have to judge whether 44 "looks low". Two objects in the same store disagree
-outright:
-
-| Object | Says |
-|---|---|
-| `quotes.status` | 44 quotes were ever won |
-| [orders](orders.md) | **tens of thousands of won jobs** exist, each accepted and paid for |
-
-An order **is** a won quote that became work. Both cannot be true, and orders is the
-table the business invoices from.
-
-That is the cleanest proof of a ghost available: not an argument about plausibility, but
-a live object next door holding the contradiction. Note the limit. It kills the 0.2% and
-does **not** replace it, because orders and quotes span different periods and not every
-order began as a quote in this table.
-
 ## What a reader will conclude if they trust it
 
 A conversion rate of about **0.2%**.
@@ -45,6 +27,25 @@ column in a table that is otherwise trustworthy. Nothing about the query looks w
 Nothing warns.
 
 This is the shape of every ghost: **it answers.**
+
+## The size of the error
+
+Computed properly, from [quote_orders](quote-orders.md) and inside its coverage window,
+the figure is **roughly three in four**.
+
+Not 0.2%. Around a 400-fold error, from a column that returns a clean value with no
+warning of any kind.
+
+The band is stated rather than a number, on purpose. It held between about 75% and 80%
+across six independent cuts: three quote windows crossed with two settling lags of 90
+and 180 days. Windows that stable are worth reporting as a band and worth nothing as a
+decimal.
+
+**How to redo it, because you should not trust this line either.** Count quotes dated
+inside the coverage window, allow at least 90 days for them to settle, and count how
+many have a row in `quote_orders`. Two caveats travel with the answer: it is a count of
+quotes, not a value, and it will read high if quotes are sometimes raised as paperwork
+for work already agreed.
 
 ## Where the answer actually lives
 
@@ -64,8 +65,8 @@ ghost in the territory.
 
 - Nothing. No script reads it, no process writes it. That is what makes it a ghost
   rather than a leftover.
-- [orders](orders.md) is not a dependant, but it **disproves** this one. If you open one
-  other card, open that.
+- [quote_orders](quote-orders.md) is not a dependant, but it is the object that
+  **disproves** this one and replaces it. If you open one other card, open that.
 
 ## Does not hit
 

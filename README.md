@@ -118,10 +118,9 @@ similar-sounding name.
 ## The sample territory
 
 `map/` holds a real map: the records and files behind how a job gets quoted, approved
-and invoiced at an Irish signage and fit-out company. Sixteen years of print-shop
-records, the pricing engine that decides what a job costs, and the two folder
-conventions holding the paperwork. Eighteen cards, of which one is a leftover and three
-are ghosts.
+and invoiced at an Irish signage and fit-out company. Sixteen years of job records, the
+pricing engine that decides what a job costs, and the two folder conventions holding the
+paperwork. Eighteen cards, of which one is a leftover and three are ghosts.
 
 The later reader there is explicitly a model: a session that has to answer a question
 against those records without loading them.
