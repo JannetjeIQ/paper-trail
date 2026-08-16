@@ -7,7 +7,7 @@
 
 ## What it is
 
-One row per won job. About 32,000 of them. The spine of the whole territory: quotes
+One row per won job. Tens of thousands of them. The spine of the whole territory: quotes
 point forward into it, and lines, invoices and purchase orders all hang off it. The
 order number is the join key for everything downstream.
 
@@ -22,8 +22,8 @@ appears in older queries.
 
 - **`total` is NET, excluding VAT.** `vat` sits alongside it and gross is the sum.
   This was contested inside the business for months and settled by two independent
-  checks: across every order in the store the ratio of vat to total is exactly 0.23, plus the
-  historic and reduced rates, which only holds if total excludes VAT; and a live test
+  checks: across every order in the store the ratio of vat to total is exactly
+  0.23, plus the historic and reduced rates, which only holds if total excludes VAT; and a live test
   order priced at 100 read back as a total of 100 with VAT of 23.
   **The data dictionary still carries the old, wrong claim on one line.** This is the
   clearest case in the territory of the rule that a card, and a schema doc, lose to the
@@ -33,8 +33,8 @@ appears in older queries.
   is who owns the client **today**, overwritten when ownership changes, therefore wrong
   for any historical question. Two of the codes appearing in `rep_code` are operations
   administrators rather than salespeople and must be excluded from rep reporting.
-- **Cancelled orders must be excluded.** Several thousand rows. This is a standing rule, not
-  a judgement call. Every analysis carries the exclusion.
+- **Cancelled orders must be excluded.** Several thousand rows. This is a standing
+  rule, not a judgement call. Every analysis carries the exclusion.
 - **Status strings are inconsistent by design and by accident.** There are many
   completion variants, and at least one exists in two casings. Match on a pattern, not
   on equality.
@@ -50,7 +50,7 @@ appears in older queries.
 
 ## Does not hit
 
-- **The `orders/` folders.** A few dozen folders against 32,000 records. Absence of a
+- **The `orders/` folders.** A few dozen folders against tens of thousands of records. Absence of a
   folder says nothing about the job. See [the orders convention](orders-folder.md).
 - **`customers.owner_code`.** Same name, sitting on the customer record rather than the
   order. Changing a client's owner does not rewrite the history on this table, which is
