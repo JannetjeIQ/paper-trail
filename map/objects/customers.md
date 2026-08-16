@@ -2,12 +2,12 @@
 
 **Type:** record
 **State:** live
-**Lives at:** table `customers` in [printlogic-sqlite](printlogic-sqlite.md)
-**Source of truth:** `01-data-dictionary.md` section `customers`
+**Lives at:** table `customers` in [jobs.sqlite](jobs-sqlite.md)
+**Source of truth:** `<records-kb>/data-dictionary.md` section `customers`
 
 ## What it is
 
-The client master list. About 4,000 rows. One per trading name. Carries address,
+The client master list. A few thousand rows. One per trading name. Carries address,
 primary contact, a segment category and the account owner.
 
 ## Why it is shaped that way

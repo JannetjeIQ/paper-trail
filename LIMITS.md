@@ -50,11 +50,29 @@ not been run and would probably find more.
 **Row counts are as at the last rebuild.** They are in the map as scale, not as truth,
 and are not maintained. If one matters to your work, query it.
 
-**Client identities and commercial rates are scrubbed.** The territory is a real
-business. Table names, column names, ghosts, coverage bounds and naming collisions are
-verbatim, because those are the map. Client names are generalised to roles, and no rate
-from the pricing file appears anywhere, which is also what
-`rules.md` section 6 demands independently of any privacy concern.
+**The map is redacted, and you should know exactly how.** The territory is a real
+business that did not consent to publishing its internal structure. So:
+
+| Redacted | How it appears |
+|---|---|
+| Real file paths | Role placeholders: `<records-kb>/`, `<scripts>/`, `<delivery>/` |
+| The job-management system's name, and its report names | "the job system"; reports unnamed |
+| Absolute row counts and record identifiers | Scale only, and only where a contrast depends on it |
+| Client identities, rates, values, exact dates | Generalised to roles, or dropped |
+
+**What is verbatim:** every ghost, every naming collision, every coverage bound, the
+three ways an earlier inference-matching approach failed, and why the pricing golden
+tests are supposed to break.
+
+The honest caveat: **you cannot verify any of it.** You cannot open the sources the
+cards cite. You are taking the traps on trust. Judge the map on whether its reasoning
+is the shape of something lived rather than something invented, because that is the
+only signal available to you here, and be appropriately sceptical.
+
+The honest defence: `rules.md` section 6 already forbids a card from carrying values,
+reproduced schema, or enough detail to rebuild the source. The redaction removed almost
+nothing the rules permitted in the first place. A map that survives redaction was
+obeying the rule. One that collapses was a photocopy.
 
 **The map has a date and no maintenance promise.** It was walked in August 2026. Two
 things in it are actively moving: a client-categorisation exercise was in flight, and

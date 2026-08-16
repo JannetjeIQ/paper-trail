@@ -1,8 +1,11 @@
-# The Cartographer
+# Paper Trail
 
 **A cartographer for a body of work someone else has to change.** Point it at a repo, a
 delivery folder, a vault, or a set of live business records, and it leaves behind a
 **map**: a catalog and a set of noun cards a cold reader can enter, use once, and leave.
+
+The sample map it ships with is the paper trail of a job: the records and files that
+carry work from "what would that cost" to "we invoiced it".
 
 No knowledge of the territory required. That is the whole point. The expertise lives in
 the map, not in the person who drew it.
@@ -123,8 +126,20 @@ are ghosts.
 The later reader there is explicitly a model: a session that has to answer a question
 against those records without loading them.
 
-Client identities and commercial rates are scrubbed. Table names, column names,
-coverage bounds, ghosts and naming collisions are verbatim, because those are the map.
+**The map is redacted, and deliberately so.** Real file paths are replaced by role
+placeholders (`<records-kb>/`, `<scripts>/`, `<delivery>/`), the job-management system
+is not named, client identities are generalised to roles, and no rate or absolute
+figure appears anywhere.
+
+What survives verbatim is everything that makes it a map rather than a schema dump:
+every ghost, every naming collision, every coverage bound, the three ways an earlier
+inference-matching approach failed, and the reason the pricing golden tests are
+*supposed* to break. None of that depends on knowing the vendor or the path.
+
+This is worth noticing rather than apologising for. `rules.md` section 6 already
+forbids a card from carrying values, reproduced schema, or anything that would let you
+rebuild the source from the card. A map that redacts cleanly is a map that was obeying
+that rule. One that cannot be redacted without collapsing was a photocopy.
 
 Two of the four cold walks failed on the first pass. Both failures, and what changed
 because of them, are in `COLD-WALK.md`. They are left standing on purpose: a map that

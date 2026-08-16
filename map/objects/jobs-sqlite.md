@@ -1,13 +1,13 @@
-# printlogic.sqlite
+# jobs.sqlite
 
 **Type:** store
 **State:** live
-**Lives at:** `20-knowledge/printlogic/printlogic.sqlite`
-**Source of truth:** the build script, `30-systems/scripts/printlogic/build_db_api.py`. Not the data dictionary. See Traps.
+**Lives at:** `<records-kb>/jobs.sqlite`
+**Source of truth:** the build script, `<scripts>/build_db.py`. Not the data dictionary. See Traps.
 
 ## What it is
 
-A local, queryable copy of the print-shop management system, rebuilt nightly from
+A local, queryable copy of the job-management system, rebuilt nightly from
 seven API report pulls. Seven tables, of which six matter to this territory. It is the
 only place anyone actually runs a query. Nobody queries the live system.
 
@@ -26,7 +26,7 @@ of orphan rows on each side are normal rather than a fault.
 ## Traps
 
 - **Each table has its own coverage window, and none of them announce it.** Quotes go
-  back to 2010. Orders go back sixteen years. Invoices start April 2024. The
+  back to 2010. Orders go back sixteen years. Invoices start at a fixed date in 2024. The
   quote-to-order link covers roughly mid-2025 onward. A query spanning all four
   silently returns the intersection, and the answer looks complete.
 - **The data dictionary is documentation, not the loader.** It is the best orientation
@@ -40,13 +40,13 @@ of orphan rows on each side are normal rather than a fault.
 
 ## Hits
 
-- `build_db_api.py` : it is the only writer. Any schema question is a question about it.
+- `build_db.py` : it is the only writer. Any schema question is a question about it.
 - Every reporting script : they all open this file. A column rename here breaks all of them at once.
 - `orders`, `quotes`, `invoices`, `customers`, `quote_orders` : they are contents of this store, not independent systems.
 
 ## Does not hit
 
-- **The live print-shop system.** This is strictly read-only and downstream. Nothing
+- **The live job system.** This is strictly read-only and downstream. Nothing
   you do to this file changes a record anyone in the business can see. A reader who
   fixes bad data here has fixed nothing, and it will be gone at the next rebuild.
 - **The accounting package.** No connection in either direction. See

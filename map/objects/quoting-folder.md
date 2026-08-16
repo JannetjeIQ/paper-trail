@@ -2,8 +2,8 @@
 
 **Type:** convention
 **State:** live
-**Lives at:** `10-delivery/quoting/`
-**Source of truth:** `10-delivery/quoting/CONTEXT.md`
+**Lives at:** `<delivery>/quoting/`
+**Source of truth:** `<delivery>/quoting/CONTEXT.md`
 
 ## What it is
 
@@ -19,11 +19,11 @@ reason a [leftover staging path](leftover-email-to-quote-staging.md) still exist
 
 ## Why it is shaped that way
 
-Because **there is no reliable customer code** in the print-shop system. See
+Because **there is no reliable customer code** in the job system. See
 [customers](customers.md). A folder therefore cannot be named after a client key,
 because there is not one to name it after.
 
-The convention resolves this by putting a **PL header inside `CONTEXT.md`** rather than
+The convention resolves this by putting an **anchor block inside `CONTEXT.md`** rather than
 in the folder name: the billing customer, the end client where it differs, and the
 quote or order number once one is raised. The anchor is inside the folder, and the
 folder name stays human.
@@ -35,7 +35,7 @@ invented code teaches everyone downstream a reference that does not resolve anyw
 ## Traps
 
 - **Nothing enforces any of this.** No script validates the folder name, no check
-  confirms `CONTEXT.md` exists or that the PL header is filled. It holds because people
+  confirms `CONTEXT.md` exists or that the the job system header is filled. It holds because people
   follow it. Expect a proportion of folders to be missing the anchor, and expect that
   proportion to be exactly the folders you need.
 - **Billing customer and end client are routinely different.** Jobs bill through
@@ -61,7 +61,7 @@ invented code teaches everyone downstream a reference that does not resolve anyw
 
 ## An honest note on drift
 
-The source document says an accepted quote moves "up one level into `10-delivery/`",
+The source document says an accepted quote moves "up one level" into delivery proper,
 while the destination convention says folders arrive into `orders/`. Both are in force
 and they describe the same move slightly differently. Marked here rather than resolved,
 because resolving it is the territory owner's call, not the cartographer's.

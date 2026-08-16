@@ -2,7 +2,7 @@
 
 **Type:** convention
 **State:** **leftover**
-**Lives at:** `10-delivery/IQ_Estimator/email-to-quote/`
+**Lives at:** `<pricing-engine>/email-to-quote/`
 **Superseded by:** [quoting/&lt;end-client-slug&gt;/](quoting-folder.md), July 2026
 
 ## What it is

@@ -2,12 +2,12 @@
 
 **Type:** record
 **State:** live, **coverage-bounded**
-**Lives at:** table `quote_orders` in [printlogic-sqlite](printlogic-sqlite.md)
-**Source of truth:** the report definition in the live system, mirrored by `build_db_api.py`
+**Lives at:** table `quote_orders` in [jobs.sqlite](jobs-sqlite.md)
+**Source of truth:** the report definition in the live system, mirrored by `build_db.py`
 
 ## What it is
 
-The system's own mapping from quote number to order number. About 2,270 pairs.
+The system's own mapping from quote number to order number. A couple of thousand pairs.
 Composite key, both columns. This is the **authoritative answer to "did this quote
 convert?"** and it is the only acceptable answer.
 

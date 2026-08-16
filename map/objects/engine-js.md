@@ -2,7 +2,7 @@
 
 **Type:** process
 **State:** live
-**Lives at:** `10-delivery/IQ_Estimator/pricing-engine/engine.js`
+**Lives at:** `<pricing-engine>/engine.js`
 **Source of truth:** itself, guarded by `validate.js` in the same folder
 
 ## What it is
@@ -47,7 +47,7 @@ citing its source quote. It is a regression harness against the business's own h
 
 ## Does not hit
 
-- **[quotes](quotes.md) in the print-shop system.** The engine prices a job. A human
+- **[quotes](quotes.md) in the job system.** The engine prices a job. A human
   then raises the quote in the system, or does not. There is no write path from the
   engine into the records at all, and the two populations do not reconcile.
 - **Historical pricing.** See [rates.json](rates-json.md). Nothing is recalculated

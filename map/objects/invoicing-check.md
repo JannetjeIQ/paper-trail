@@ -2,7 +2,7 @@
 
 **Type:** process
 **State:** live
-**Lives at:** `30-systems/scripts/printlogic/invoicing_check.py`
+**Lives at:** `<scripts>/invoicing_check.py`
 **Source of truth:** itself, and its docstring, which records the reasoning
 
 ## What it is
@@ -28,7 +28,7 @@ Its design decisions are worth reading because each one is a scar:
 - **It excludes void invoices and cancelled orders.**
 - **"Completed" is matched as a pattern**, not an equality, because there are many
   completion status variants and at least one exists in two casings.
-- The "no invoice at all" section is scoped to the April 2024 invoice floor and further
+- The "no invoice at all" section is scoped to the 2024 invoice floor and further
   excludes statuses that assert invoicing happened in the previous accounting system.
 
 ## Traps
@@ -50,5 +50,5 @@ Its design decisions are worth reading because each one is a scar:
   whether billed work has been paid. Those are different problems with different owners
   and the `paid` flag here is not trustworthy for the second one. See
   [the accounting boundary](accounting-boundary.md).
-- **Anything before April 2024.** Bounded by the invoice floor, and it says so in its
+- **Anything before that date.** Bounded by the invoice floor, and it says so in its
   own scoping rather than returning a confident nothing.

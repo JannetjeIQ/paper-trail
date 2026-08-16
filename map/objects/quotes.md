@@ -2,14 +2,13 @@
 
 **Type:** record
 **State:** live
-**Lives at:** table `quotes` in [printlogic.sqlite](printlogic-sqlite.md)
-**Source of truth:** `20-knowledge/printlogic/01-data-dictionary.md`, section `quotes`, read against the build script
+**Lives at:** table `quotes` in [jobs.sqlite](jobs-sqlite.md)
+**Source of truth:** `<records-kb>/data-dictionary.md`, section `quotes`, read against the build script
 
 ## What it is
 
-Quote headers. About 24,000 rows, January 2010 to the present, running at roughly
-1,700 a year. One row per quote raised in the system. The primary key is the quote
-number, and every one of them is unique.
+Quote headers. About 24,000 rows, January 2010 to the present. One row per quote raised in
+the system. The primary key is the quote number, and every one is unique.
 
 This is the record of **what was quoted**. It is not the record of what happened next.
 That distinction was settled by a ruling in July 2026 and it is the most important
@@ -20,8 +19,8 @@ what happened to it.**
 
 The quotes report was added to the store late, in July 2026, to answer conversion
 questions that had previously been guessed at. It arrived without a lines table,
-because the 31,000-odd quote lines in the source carry no usable key and are dropped at
-build. So a quote here is a header and a total, never a breakdown.
+because the tens of thousands of quote lines in the source carry no usable key
+and are dropped at build. So a quote here is a header and a total, never a breakdown.
 
 ## Traps
 
@@ -29,7 +28,7 @@ build. So a quote here is a header and a total, never a breakdown.
   Read that before you use this table for anything resembling a win rate.
 - **`total` is ex-VAT on strong evidence, not proof.** The dataset exposes no VAT
   column, so there is nothing to check it against. The evidence is that every one of
-  the 22,000-odd non-zero values is a whole euro, with no cents anywhere, which is what
+  the non-zero values is a whole euro, with no cents anywhere, which is what
   you get from ex-VAT prices rounded to the euro and not what you get from a VAT
   calculation. Treat as ex-VAT, say so when you report, and do not compare a quote
   value to an order value without stating both bases.

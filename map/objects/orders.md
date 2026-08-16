@@ -2,8 +2,8 @@
 
 **Type:** record
 **State:** live
-**Lives at:** table `orders` in [printlogic-sqlite](printlogic-sqlite.md)
-**Source of truth:** `01-data-dictionary.md` section `orders`, **except on the VAT basis**, where the workspace guardrail overrides it. See Traps.
+**Lives at:** table `orders` in [jobs.sqlite](jobs-sqlite.md)
+**Source of truth:** `<records-kb>/data-dictionary.md` section `orders`, **except on the VAT basis**, where the workspace guardrail overrides it. See Traps.
 
 ## What it is
 
@@ -22,7 +22,7 @@ appears in older queries.
 
 - **`total` is NET, excluding VAT.** `vat` sits alongside it and gross is the sum.
   This was contested inside the business for months and settled by two independent
-  checks: across 24,660 orders the ratio of vat to total is exactly 0.23, plus the
+  checks: across every order in the store the ratio of vat to total is exactly 0.23, plus the
   historic and reduced rates, which only holds if total excludes VAT; and a live test
   order priced at 100 read back as a total of 100 with VAT of 23.
   **The data dictionary still carries the old, wrong claim on one line.** This is the
@@ -33,12 +33,12 @@ appears in older queries.
   is who owns the client **today**, overwritten when ownership changes, therefore wrong
   for any historical question. Two of the codes appearing in `rep_code` are operations
   administrators rather than salespeople and must be excluded from rep reporting.
-- **Cancelled orders must be excluded.** About 3,282 rows. This is a standing rule, not
+- **Cancelled orders must be excluded.** Several thousand rows. This is a standing rule, not
   a judgement call. Every analysis carries the exclusion.
 - **Status strings are inconsistent by design and by accident.** There are many
   completion variants, and at least one exists in two casings. Match on a pattern, not
   on equality.
-- About 13% of recent orders have a blank invoice number. That is in-flight work, not
+- A minority of recent orders have a blank invoice number. That is in-flight work, not
   an error.
 
 ## Hits

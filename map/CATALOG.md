@@ -7,7 +7,7 @@ would cost" to "we invoiced it", at an Irish signage and fit-out company.
 about to either answer it or change something. Sometimes a new account manager
 inheriting a book of work.
 
-**Edge.** Sixteen years of print-shop records in one system, the pricing engine that
+**Edge.** Sixteen years of job records in one system, the pricing engine that
 sets what a job costs, and the two folder conventions that hold the paperwork. Out of
 scope: design production, installation scheduling, the accounting package (marked as a
 boundary), and anything about people or performance.
@@ -39,17 +39,17 @@ card and does not count against your two hops. Read it when a word feels obvious
 
 | Card | Type | What it is | Open this when you are asking |
 |---|---|---|---|
-| [printlogic.sqlite](objects/printlogic-sqlite.md) | store | The queryable copy of the whole system, rebuilt nightly | "Where do I actually run a query, and how fresh is it?" |
+| [jobs.sqlite](objects/jobs-sqlite.md) | store | The queryable copy of the whole system, rebuilt nightly | "Where do I actually run a query, and how fresh is it?" |
 | [quotes](objects/quotes.md) | record | Every quote raised since 2010, about 24,000 | "What did we quote, to whom, when?" |
 | [quote_orders](objects/quote-orders.md) | record | The system's own quote-to-order mapping | "Did this quote convert?" |
-| [orders](objects/orders.md) | record | Every won job, about 32,000 | "What did we sell, who worked it, what was it worth?" |
-| [invoices](objects/invoices.md) | record | Invoice records, April 2024 onward only | "Was this job invoiced, and paid?" |
-| [customers](objects/customers.md) | record | The client master list, about 4,000 | "Who is this client and how do I join to them?" |
+| [orders](objects/orders.md) | record | Every won job, tens of thousands | "What did we sell, who worked it, what was it worth?" |
+| [invoices](objects/invoices.md) | record | Invoice records, a fixed 2024 start date onward only | "Was this job invoiced, and paid?" |
+| [customers](objects/customers.md) | record | The client master list, a few thousand | "Who is this client and how do I join to them?" |
 | [rates.json](objects/rates-json.md) | config | Single source of truth for what things cost | "Where does a price come from?" |
 | [engine.js](objects/engine-js.md) | process | Turns a scope into priced lines | "Why did the quote come out at that number?" |
 | [quoting/&lt;end-client-slug&gt;/](objects/quoting-folder.md) | convention | One folder per opportunity, pre-acceptance | "Where does the paperwork for a live quote live?" |
 | [orders/&lt;slug&gt;/](objects/orders-folder.md) | convention | One folder per won job needing working files | "Where does the paperwork for a won job live?" |
-| [build_db_api.py](objects/build-db-api.md) | process | Nightly rebuild of the store from seven reports | "Why is this column missing, or this row dropped?" |
+| [build_db.py](objects/build-db.md) | process | Nightly rebuild of the store from seven reports | "Why is this column missing, or this row dropped?" |
 | [quote_chase.py](objects/quote-chase.md) | process | Aged digest of quotes with no order against them | "Which quotes are still open and need chasing?" |
 | [invoicing_check.py](objects/invoicing-check.md) | process | Weekly digest of complete-but-not-fully-invoiced jobs | "How do we catch a job we forgot to finish invoicing?" |
 
@@ -100,7 +100,7 @@ None of the values mean what they appear to mean.
                                                       ▼
                                           the accounting package (boundary)
 
-  All of the above lands in printlogic.sqlite nightly, via build_db_api.py.
+  All of the above lands in jobs.sqlite nightly, via build_db.py.
 ```
 
 The two columns of that picture are the thing a stranger most needs to see. The left
@@ -119,5 +119,5 @@ is the reason `quote` and `order` each have two cards' worth of meaning.
 - The pricing engine's calibration and feedback loop is real and is out of scope here.
 - Two further absences, a secondary contacts table and an off-system pipeline list,
   are named in the build script but do not exist in the current store. They are
-  recorded on the [build_db_api.py](objects/build-db-api.md) card rather than given
+  recorded on the [build_db.py](objects/build-db.md) card rather than given
   ghost cards of their own, because nothing downstream reaches for them by name.

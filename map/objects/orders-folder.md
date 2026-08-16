@@ -2,8 +2,8 @@
 
 **Type:** convention
 **State:** live
-**Lives at:** `10-delivery/orders/`
-**Source of truth:** `10-delivery/orders/CONTEXT.md`
+**Lives at:** `<delivery>/orders/`
+**Source of truth:** `<delivery>/orders/CONTEXT.md`
 
 ## What it is
 
@@ -28,7 +28,7 @@ read as one.
 
 ## Traps
 
-- **This is not the delivery pipeline.** A handful of folders against about 32,000
+- **This is not the delivery pipeline.** A handful of folders against tens of thousands of
   order records. The overwhelming majority of jobs never get a folder because they
   never needed one.
 - Nothing enforces the convention or prunes it. An old closed job and a live one look

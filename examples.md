@@ -11,7 +11,7 @@ Read this to learn the method. Read `map/CATALOG.md` to use the result.
 ## The territory
 
 The records and files behind how a job gets quoted, approved and invoiced at an Irish
-signage and fit-out company. Sixteen years of print-shop records, the pricing engine
+signage and fit-out company. Sixteen years of job records, the pricing engine
 that decides what a job costs, and two folder conventions holding the paperwork.
 
 **Later reader:** a model with no memory, holding one question. Occasionally a new
@@ -65,7 +65,7 @@ what the closed set exists to defeat. A type invented to accommodate one awkward
 makes the next hundred maps worse.
 
 **What was done instead**, and this is the better answer anyway: the dictionary appears
-on the `printlogic.sqlite` card as **the thing that is not the source of truth**.
+on the `jobs.sqlite` card as **the thing that is not the source of truth**.
 
 > Source of truth: the build script. **Not the data dictionary.**
 
@@ -123,7 +123,7 @@ Both cold-walk failures in `COLD-WALK.md` were failures of that column.
 From `map/objects/orders.md`, the trap that matters most:
 
 > **`total` is NET, excluding VAT.** [...] This was contested inside the business for
-> months and settled by two independent checks: across 24,660 orders the ratio of vat
+> months and settled by two independent checks: across every order in the store the ratio of vat
 > to total is exactly 0.23 [...]; and a live test order priced at 100 read back as a
 > total of 100 with VAT of 23. **The data dictionary still carries the old, wrong claim
 > on one line.**

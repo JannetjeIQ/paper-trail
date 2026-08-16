@@ -35,7 +35,7 @@ This is the shape of every ghost: **it answers.**
 
 ## The ruling
 
-Made in July 2026 and standing: **the print-shop system holds what was quoted, the
+Made in July 2026 and standing: **the job system holds what was quoted, the
 project board holds what happened to it.** Never report a win rate, a conversion
 percentage or a pipeline forecast from this column.
 

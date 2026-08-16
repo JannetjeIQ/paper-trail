@@ -2,7 +2,7 @@
 
 **Type:** record field
 **State:** **ghost**, empty field
-**Lives at:** a markup-percentage band on the customer record in the print-shop system
+**Lives at:** a markup-percentage band on the customer record in the job system
 **Source of truth:** the standing house rule that declares it defunct
 
 ## What it is

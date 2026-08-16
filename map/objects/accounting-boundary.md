@@ -7,7 +7,7 @@
 
 ## What it is
 
-The wall at the money end of this territory. The print-shop system records that an
+The wall at the money end of this territory. The job system records that an
 invoice was **raised**. The accounting package records what was **owed, received and
 reconciled**. Bookkeeping is outsourced, so there are people on the other side of this
 wall as well as a system.
@@ -19,7 +19,7 @@ wall as well as a system.
 | Invoice raised | production system → accounting | Not by an integration. Reconciled by people |
 | Payment received | accounting only | Never reaches the production system reliably |
 | Debtors position | accounting only | Does not exist on this side |
-| Pre-April-2024 invoice history | neither | Sat in a **previous** accounting system, migrated to neither |
+| Pre-2024 invoice history | neither | Sat in a **previous** accounting system, migrated to neither |
 
 There is no live integration mapped in this territory. Treat the join as human.
 

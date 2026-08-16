@@ -2,7 +2,7 @@
 
 **Type:** config
 **State:** live
-**Lives at:** `10-delivery/IQ_Estimator/pricing-engine/rates.json`
+**Lives at:** `<pricing-engine>/rates.json`
 **Source of truth:** itself. It is the declared single source of truth for pricing.
 
 ## What it is
@@ -54,5 +54,5 @@ defensible.
   next quote priced, not to anything already in [quotes](quotes.md) or
   [orders](orders.md). A reader who changes a rate expecting reporting to move will see
   nothing move, and will conclude wrongly that the change did not take.
-- **The customer pricing band in the print-shop system.** That is a
+- **The customer pricing band in the job system.** That is a
   [ghost](ghost-pricing-band.md) and has never fed this file.

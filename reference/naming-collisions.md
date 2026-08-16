@@ -49,9 +49,13 @@ If you cannot state the cost concretely, it is not a collision, it is a synonym.
 # Filled: the worked territory
 
 The records and files behind quoting, approving and invoicing a job at a signage and
-fit-out company. Source paths are given as they appear in the private workspace; a
-reader of this repo cannot open them, and that is fine, because the point is that the
-card cites rather than copies.
+fit-out company.
+
+Locations are written as role placeholders (`<records-kb>/`, `<scripts>/`,
+`<delivery>/`) rather than as the real paths, and the job-management system is not
+named. A reader of this repo could not open those files anyway. What matters is that
+each card **points** at a source and loses to it, and that survives the redaction
+intact. See `../LIMITS.md`.
 
 ---
 
@@ -112,7 +116,7 @@ guardrail that settled it, not at the schema doc that describes it.
 
 | | |
 |---|---|
-| **A** | A row in `invoices`. **Coverage starts April 2024.** Nothing earlier exists. |
+| **A** | A row in `invoices`. **Coverage starts at a fixed date in 2024.** Nothing earlier exists. |
 | **B** | An invoice in the accounting package, which is the actual financial record. |
 | **C** | An invoice raised in the **previous** accounting system, pre-2024, referenced in order statuses and present nowhere in the data. |
 | **Stranger assumes** | The invoice table is complete. |

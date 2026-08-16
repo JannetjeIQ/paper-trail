@@ -2,25 +2,24 @@
 
 **Type:** record
 **State:** live, **coverage-bounded**
-**Lives at:** table `invoices` in [printlogic-sqlite](printlogic-sqlite.md)
-**Source of truth:** `01-data-dictionary.md` section `invoices`
+**Lives at:** table `invoices` in [jobs.sqlite](jobs-sqlite.md)
+**Source of truth:** `<records-kb>/data-dictionary.md` section `invoices`
 
 ## What it is
 
-Invoice records against orders. About 3,449 rows. Net, VAT and total are separate
+Invoice records against orders. A few thousand rows. Net, VAT and total are separate
 columns here, so unlike [orders](orders.md) there is no basis ambiguity. Every row
 matches an order.
 
 ## Why it is shaped that way
 
-It only exists from **5 April 2024 onward**. Before that date the business invoiced
+It only exists from **a hard start date in 2024**. Before that date the business invoiced
 from a different accounting system, and those invoices were never migrated. The table
 is not incomplete by accident: it starts when the current system started.
 
 ## Traps
 
-- **The coverage floor is the whole story.** Any question touching a period before
-  April 2024 returns zero rows and reads as "nothing was invoiced". Order statuses from
+- **The coverage floor is the whole story.** Any question touching a period before that date returns zero rows and reads as "nothing was invoiced". Order statuses from
   that era assert that invoicing happened elsewhere, which is the only evidence that
   survives. Scope every query to the floor and say so in the answer.
 - **`paid` is not reliable.** It is carried through from the source and is not

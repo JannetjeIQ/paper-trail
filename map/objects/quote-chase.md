@@ -2,7 +2,7 @@
 
 **Type:** process
 **State:** live
-**Lives at:** `30-systems/scripts/printlogic/quote_chase.py`
+**Lives at:** `<scripts>/quote_chase.py`
 **Source of truth:** itself, and its docstring, which records the reasoning
 
 *Added after a cold walk found no door for the question "which quotes are still open?".
