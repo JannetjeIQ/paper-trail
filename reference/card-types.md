@@ -80,7 +80,26 @@ and naming the door.
 
 ## Card shape
 
-Every card, every type, same skeleton. Keep it under about sixty lines.
+Every card, every type, same skeleton.
+
+### The line budget, and why it differs by type
+
+| Card state | Budget |
+|---|---|
+| `live`, `leftover`, `unverified` | **62 lines** |
+| `ghost` | **80 lines** |
+
+Not a concession. A ghost card carries three things the others do not: the **search that
+proved absence**, the **wrong conclusion** a reader reaches by trusting it, and the
+**correct alternative** to send them to instead. That is structurally more content, and
+squeezing it to the same length means dropping the evidence, which is the one part that
+must never go.
+
+The budget exists to stop a card becoming a chapter, not to hit a number. **If you find
+yourself cutting evidence to fit, the budget is wrong and you should change it and say
+so, rather than cut.** That is exactly what happened here: the first version of this file
+set one figure for every card, three ghost cards broke it, and the honest fix was to
+distinguish the states rather than gut the cards. `check_map.py` enforces both figures.
 
 ```markdown
 # <exact name as it appears in the territory>

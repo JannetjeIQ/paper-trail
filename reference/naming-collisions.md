@@ -131,6 +131,15 @@ guardrail that settled it, not at the schema doc that describes it.
 | **Stranger assumes** | The obvious key is the key. Every schema they have ever seen worked that way. |
 | **Cost** | Joins silently drop about four fifths of customers. The query runs. The answer is confidently partial. |
 
+### `band`
+
+| | |
+|---|---|
+| **A** | In the pricing engine, a **banded rate tier**: low / typical / high per product, typical being the default and the spread being the slide for competitive pressure or complexity. Live, and read on every quote. |
+| **B** | On the customer record in the job system, a **defunct gross-profit markup band**. Dead for years, and not present in the mapped store at all. |
+| **Stranger assumes** | That a search for "band" returning forty hits in the pricing engine proves the customer band feeds pricing. |
+| **Cost** | The exact opposite of the truth, reached from real evidence about a different object. This collision surfaced while running the ghost search required by `../rules.md` section 4, and it came within one careless reading of inverting the finding. |
+
 ### `last_email_date`
 
 | | |

@@ -2,44 +2,59 @@
 
 **Type:** record
 **State:** **ghost**, removed target
-**Lives at:** nowhere. Verified absent from the current store.
+**Lives at:** nowhere in the current store. **Still constructed and read by three scripts.**
 **Formerly at:** a side table in the pre-July-2026 manual build
 
 ## What it is
 
-A table that no longer exists.
+A table that no longer exists, whose name is still live in code.
 
 It used to carry the fields that would not fit on the main order record: rep, owner,
 status, completion date, invoice number. The July 2026 rebuild moved all of them onto
-[orders](orders.md) directly, and the side table went away with the build that made it.
+[orders](orders.md) directly, and the side table went with the build that made it.
 
-## Why it is still a hazard
+## The search that proved it
 
-Because the name outlived the table. It appears in older saved queries, in analysis
-written against the previous build, and in the working memory of anyone who learned
-this territory before mid-2026, human or model.
+Two searches. The second is the one that matters.
 
-A query joining to it does not return a subtly wrong answer. It **fails**, which is the
-kindest thing a ghost can do. The hazard is not the failure, it is the diagnosis: the
-obvious reading of the error is that the database is broken or the rebuild dropped a
-table. It is neither. The fields were promoted and are all still there, on the record
-next door.
+**Does the table exist?** Listed every table in the store. Seven: customers, invoices,
+order_lines, orders, purchase_orders, quote_orders, quotes. **No `orders_ext`.** Settled.
 
-The previous manual store is preserved as a separate backup file. It is not the current
-world and must not be queried as though it were.
+**Does anything still reach for it?** Searched the whole scripts folder for the name.
+**Twenty-five hits across three files.** Nineteen are in the superseded manual CSV build,
+which creates and drops the table. The other two files are report scripts that read it.
+
+So this is not a dead name. It is a **live name pointing at nothing.** Any of those three
+scripts, run today against the current store, fails or returns empty.
+
+That correction came from running the search. The earlier draft of this card said the
+table "lives nowhere", which was true of the database and wrong about the territory.
+
+## Why that makes it worse, not weaker
+
+A ghost with no callers is inert. This one has three, and one is an entire build script
+that would construct a parallel database if anyone ran it.
+
+The danger is not the crash, it is the **diagnosis**. The obvious reading of
+"no such table: orders_ext" is that the store is broken or the rebuild dropped something.
+It is neither. Every field this table held sits on [orders](orders.md) under the same
+names.
 
 ## What a reader will conclude if they trust it
 
-That the store is missing data. They will go looking for a restore, or rebuild
-something that already exists, when the columns they want are sitting on
-[orders](orders.md) under the same names.
+That the store is missing data, and a restore or rebuild is needed. They will hunt for a
+backup, or re-derive columns that already exist one table over.
 
 ## Hits
 
-- Nothing live. It has no dependants because it has no existence.
+- Nothing live depends on it, because it does not exist.
+- Three scripts **name** it and would fail on it. Naming is not depending, but a reader
+  who opens any of those three meets this ghost before they meet this card.
 
 ## Does not hit
 
-- **[orders](orders.md).** Not in the sense of being attached to it. But orders is where
-  every field this ghost used to hold now lives, which is the only thing a reader who
-  lands here needs to be told. Go there.
+- **[orders](orders.md)**, in the sense of being attached. But orders is where every
+  field this ghost once held now lives, which is the only thing a reader landing here
+  needs. Go there.
+- **The current nightly build.** The live loader never references this table. The script
+  that does is itself superseded, which makes it a leftover carrying a ghost.

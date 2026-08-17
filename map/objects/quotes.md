@@ -24,8 +24,11 @@ and are dropped at build. So a quote here is a header and a total, never a break
 
 ## Traps
 
-- **`status` is dead.** It has its own card: [quotes.status](ghost-quotes-status.md).
-  Read that before you use this table for anything resembling a win rate.
+- **`status` is dead, and no route from this table yields a win rate.** The dead column
+  has its own card, [quotes.status](ghost-quotes-status.md). Defeating it is not enough:
+  the recorded quote population is self-selected, so any aggregate rate built here is
+  inflated by the losses nobody keyed in. Outcome lives on
+  [the project board](the-project-board.md).
 - **`total` is ex-VAT on strong evidence, not proof.** The dataset exposes no VAT
   column, so there is nothing to check it against. The evidence is that every one of
   the non-zero values is a whole euro, with no cents anywhere, which is what

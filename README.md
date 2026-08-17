@@ -110,7 +110,8 @@ similar-sounding name.
 | `reference/walk-order.md` | Nine steps, the gates between them, and what breaks if you skip one |
 | `reference/naming-collisions.md` | Where one word means two things. Rewritten per territory |
 | `LIMITS.md` | Where this can be wrong. Read before trusting it |
-| `COLD-WALK.md` | Four real walks of the sample map. Two failed. Both fixes recorded |
+| `check_map.py` | Enforces the structural rules. Run it before publishing a map |
+| `COLD-WALK.md` | Five real walks. Two failed, and walk 5 was a genuinely cold agent |
 | `map/` | The finished sample map. Output, not instruction |
 
 ---
@@ -140,10 +141,14 @@ forbids a card from carrying values, reproduced schema, or anything that would l
 rebuild the source from the card. A map that redacts cleanly is a map that was obeying
 that rule. One that cannot be redacted without collapsing was a photocopy.
 
-Two of the four cold walks failed on the first pass. Both failures, and what changed
-because of them, are in `COLD-WALK.md`. They are left standing on purpose: a map that
-has never been walked cold is a draft, and one that has been walked and reports only
-its successes is a brochure.
+**Five cold walks, and the failures are published.** Two of the first four failed
+outright. Walk 5 handed the catalog and one question to a separate model with no memory of
+this territory: it reached the right answer in two hops, and still found four defects, of
+which three held under checking and one was overstated. All of it is in `COLD-WALK.md`,
+including which finding was rejected and why.
+
+Left standing on purpose. A map never walked cold is a draft, and one walked but reporting
+only its successes is a brochure.
 
 ---
 

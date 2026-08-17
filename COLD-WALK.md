@@ -109,16 +109,81 @@ the whole product.
 
 ---
 
+## Walk 5: a genuinely cold agent. PASSED, and found three defects
+
+Walks 1 to 4 were self-administered, which `LIMITS.md` admits is the weakest form of this
+test. Walk 5 was not. A separate model with **no memory of this territory, this repo, or
+the conversation that built it** got one path, `map/CATALOG.md`, one question, and an
+instruction not to read the method files.
+
+**Question:** *"I want to report our quote win rate to my board next week. What number do I
+use, and where does it come from?"*
+
+The trap question. The naive answer sits in a fully-populated column.
+
+### What it did
+
+Three files, in order: the catalog, `quote_orders`, `ghost-quotes-status`. Two cards.
+Inside budget.
+
+**It reached the correct answer**, that no defensible number exists in this territory, and
+it got there by being stopped twice. Its own words:
+
+> After reading `quote_orders.md`, its own "Does not hit" section stopped me from reaching
+> for `quotes.status` next.
+
+> Having already discounted 0.2% and landed on the "sounds right" 76% figure, it stopped me
+> a second time. That second catch is the one that actually mattered. Without it I'd have
+> reported 76% to the board with confidence.
+
+That is the product working. A cold reader defeats the obvious trap, walks into the subtle
+one, and the map catches it.
+
+### The defects it found
+
+Reported blunt, on request. Three held. One did not.
+
+**1. No routing row for the actual question. CONFIRMED, fixed.** Nothing in the catalog
+said "win rate". The nearest row was per-quote, "Did this quote convert?", so the reader
+had to guess that *conversion* meant *win rate*. The boundary section now has routing rows
+using the words a reader would actually bring.
+
+**2. The map says leave without naming where to go. CONFIRMED, fixed.** Two cards told the
+reader outcome lives on "the project board" and no card existed for it. Its words: *"a
+business owner with a board meeting next week gets told what not to trust and nothing about
+where to look instead."* That breaks this map's own rule in `reference/card-types.md`, that
+a boundary card marks the wall **and names the door**. Added
+[the project board](map/objects/the-project-board.md).
+
+**3. The two-hop rule is stated obliquely. CONFIRMED, fixed.** It appeared only in a
+subordinate clause about a file exempt from it, so the agent had to infer both that the rule
+existed and what its number was. Now the first line of the catalog.
+
+**4. "A reader landing on `quotes.md` gets none of the warnings." OVERSTATED, rejected as
+written.** That card already warned off `status` explicitly. But checking it surfaced a real
+weaker version: the warning covered the dead field and not the population problem, so that
+path was saved from the first trap and not the third. `quotes.md` now carries both.
+
+**An agent's finding is evidence, not a verdict.** Acting on the fourth as written would
+have added a warning that was already there and missed the actual gap beside it.
+
+---
+
 ## What the walks changed
 
 | Walk | Outcome | Change to the map |
 |---|---|---|
 | 1 | Failed, three hops | New card and catalog row for `quote_chase.py` |
-| 2 | Failed, no route | Catalog now names the colliding words and grants them a free lookup |
+| 2 | Failed, no route | Catalog names the colliding words, grants them a free lookup |
 | 3 | Passed | None |
 | 4 | Passed | None |
+| 5 | **Passed, cold agent** | Boundary routing rows, the project board card, two-hop rule stated outright, population trap added to `quotes` |
 
-Two of four failed on the first pass. Both failures were the same failure in different
-clothes: **the map was indexed by the territory rather than by the reader's question.**
-That is the defect this form is most prone to, it is invisible from the inside, and it
-is why step 8 is not optional.
+Three of the five walks changed the map. Walks 1 and 2 failed outright. Walk 5 passed and
+still produced four findings, three of which held.
+
+The pattern across all of them is one defect wearing different clothes: **the map was
+indexed by the territory rather than by the reader's question.** Every fix moved it toward
+the reader. That defect is invisible from the inside, which is why the walk is step 8 and
+why walk 5, run by something that had never seen the territory, was worth more than the
+four before it put together.

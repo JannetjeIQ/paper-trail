@@ -19,11 +19,17 @@ rebuild and are not maintained here.
 
 ## How to use this page
 
-Find your question in the right-hand column. Open **that one card**. Stop.
+**The rule: two hops. This page, then one card. Then stop.**
 
-Do not open the `objects/` folder as a whole. There are eighteen cards. Reading them
-all would take longer than reading the source, which defeats the point of this page
-existing.
+Find your question in the right-hand column and open that one card. If it answers you,
+you are finished, even if a neighbouring card looks interesting. If you have opened
+three cards, the map has failed and should be fixed rather than worked around.
+
+One exception, and it is free: `../reference/naming-collisions.md` is a dictionary, not
+a card. Looking a word up there costs you no hops.
+
+Do not open the `objects/` folder as a whole. There are nineteen cards. Reading them all
+would take longer than reading the source, which defeats the point of this page existing.
 
 If your noun is not in this table, it is not in this territory. Say so. Do not reach
 for the nearest similar name.
@@ -55,9 +61,12 @@ card and does not count against your two hops. Read it when a word feels obvious
 
 ## Boundary
 
+Two questions this map cannot answer. These cards name the wall and the door.
+
 | Card | Type | What it is | Open this when you are asking |
 |---|---|---|---|
-| [the accounting package](objects/accounting-boundary.md) | boundary | Where the money record actually lives | "Which system wins on a financial figure?" |
+| [the project board](objects/the-project-board.md) | boundary | Where quote outcome is actually tracked | **"What is our win rate / conversion rate?"** or "did we win this one?" |
+| [the accounting package](objects/accounting-boundary.md) | boundary | Where the money record actually lives | "Which system wins on a financial figure?" or "who owes us?" |
 
 ## Leftover
 

@@ -36,16 +36,18 @@ named, that is an auditor, and this is not one.
 
 ## Limits of the worked map in `map/`
 
-**The cold walks were self-administered.** The cartographer wrote the map and then
-walked it. That is the weakest form of the test and it is worth being blunt about what
-it can and cannot show.
+**Four of the five cold walks were self-administered.** Walks 1 to 4 were run by the
+cartographer against its own map, which is the weakest form of the test. They can show a
+structural miss, because a door is either there or it is not, but they cannot show whether
+the language lands for someone who does not know the domain.
 
-It **can** show a structural miss: walk 1 found a question with no door, and the
-finding stands regardless of who ran it, because the door was either there or it was
-not. It **cannot** show whether the language lands for someone who does not already
-know the domain. The person walking already knew what a quote-to-order link was. A
-genuine stranger walk, by a person or a model with no exposure to this territory, has
-not been run and would probably find more.
+**Walk 5 fixes that, partly.** A separate model with no memory of this territory or of the
+work that produced it was given the catalog and one question. It passed, and it still found
+four defects, three of which held under checking. Those fixes are in the map.
+
+What walk 5 still does not prove: it was one model, one question, one run. A **human**
+stranger has not walked this, and a second question might expose a route the first never
+touched. Treat the map as tested at one point, not proven across its surface.
 
 **Row counts are as at the last rebuild.** They are in the map as scale, not as truth,
 and are not maintained. If one matters to your work, query it.

@@ -111,6 +111,35 @@ a number, and the later reader will report that number. Mark the ghost, and on t
 say **what a reader will conclude if they trust it**, because that conclusion is the
 actual damage.
 
+### A ghost must cite the search that proved its absence
+
+The strictest rule on this page, because a ghost card is the one card that asserts a
+**negative**. "Nothing reads this" cannot be checked by a reader without redoing your
+work, and redoing your work is what the map exists to spare them.
+
+So do not assert it. **Show the search.** What you searched, across what, and what came
+back. One line is enough:
+
+> Searched every loader and report script for the column name. Zero analytical reads.
+> The only two matches are comments warning against using it.
+
+Three reasons this is a rule and not a nicety.
+
+It is **falsifiable**: a reader who doubts you reruns one command.
+
+It **bounds the claim honestly**. "Zero hits across the eleven scripts in this folder"
+is smaller and truer than "nothing reads it", and that gap is exactly where ghost cards
+go wrong.
+
+And it **catches your own errors before publication**. Writing the search is what
+reveals that a field you called unwired is written by the loader after all, or that a
+table you called absent is still constructed by three scripts that would now fail. Both
+happened while this rule was applied to the worked example. An asserted ghost hides
+that. A cited one cannot.
+
+Where the search finds live callers of something that no longer exists, that is not a
+failed ghost. It is a **worse** one, and the card must say so.
+
 ### The default
 When you cannot evidence a state, mark it **`state: unverified`** and say what evidence
 would settle it. Do not guess.
