@@ -39,7 +39,7 @@ That single decision is what makes everything downstream possible.
 
 ## Step 2. The inventory, and what got cut
 
-Thirty-one candidate nouns. Eighteen survived. The cuts are more instructive than the
+Thirty-one candidate nouns. Eighteen survived the inventory. The cuts are more instructive than the
 survivors.
 
 | Cut | Why |
@@ -78,7 +78,12 @@ the store's card than it would have been as a card of its own.
 
 ## Step 3. The state split, and the gate
 
-Eighteen nouns: fourteen live, one leftover, three ghosts.
+Eighteen nouns at this stage: fourteen live, one leftover, three ghosts. A nineteenth was
+added later, a boundary card for the project board, and it did not come from the inventory
+at all. It came from the cold walk in `COLD-WALK.md`, which found the map telling readers
+to leave without naming where to go. Worth recording, because it shows the inventory step
+is necessary and not sufficient: it finds what is in the territory, and a reader can still
+arrive needing a door out of it.
 
 The gate exists because this is the column that cannot be established from outside.
 Two examples of it earning its place:
