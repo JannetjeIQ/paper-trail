@@ -143,6 +143,35 @@ whether the source could be rebuilt from the card. It could not. Correct.
 
 ---
 
+## A second card, teaching the opposite rule
+
+`rates.json` is the config file every price in the business comes from. Roughly thirty
+sections: product rates, crew rates, studio rates, travel bands, rounding, minimum
+margins. Its card contains **not one figure from it**, and says so:
+
+> This card does not reproduce a single figure from it, deliberately. Rates change, cards
+> do not, and a card carrying a stale price is worse than no card at all. Open the file.
+> That is what citing means.
+
+Set the two cards side by side and they teach opposite halves of the same rule.
+
+`orders` shows **when a fact belongs in a card**: the VAT basis was contested for months,
+so the card carries the basis, the evidence, and where the wrong claim still lives.
+Without that, a reader who stumbles on the contradiction reopens a settled argument.
+
+`rates.json` shows **when a fact must stay out**: the numbers are the most useful thing
+in the file and are exactly what must not be copied, because they move.
+
+What its card carries instead is the shape of the traps. Travel is charged per attendance
+day, not once per job. A half day is not pro rata. Wastage is applied to net area and
+never shown to the client. Each gets "corrected" by well-meaning readers who assume the
+file is wrong, so the card's job is to say **read the note before changing the value**.
+
+Test from `rules.md` section 6: could you rebuild the rate file from its card? No.
+Correct.
+
+---
+
 ## The ghost, in full
 
 `quotes.status`. A status column on about 24,000 quotes, 100% populated, tidy values,
