@@ -121,10 +121,16 @@ similar-sounding name.
 `map/` holds a real map: the records and files behind how a job gets quoted, approved
 and invoiced at an Irish signage and fit-out company. Sixteen years of job records, the
 pricing engine that decides what a job costs, and the two folder conventions holding the
-paperwork. Eighteen cards, of which one is a leftover and three are ghosts.
+paperwork. Nineteen cards, of which one is a leftover and three are ghosts.
 
 The later reader there is explicitly a model: a session that has to answer a question
 against those records without loading them.
+
+**The rules are enforced, not just stated.** Run `python check_map.py`. Every card must
+carry both Hits and Does not hit, every ghost must cite the search that proved its absence,
+no card may be orphaned from the catalog, every link must resolve, and each card has a line
+budget. It passes clean in `--strict`. It did not on the first run, and writing the ghost
+searches corrected two cards that were wrong.
 
 **The map is redacted, and deliberately so.** Real file paths are replaced by role
 placeholders (`<records-kb>/`, `<scripts>/`, `<delivery>/`), the job-management system
