@@ -8,68 +8,73 @@
 ## What it is
 
 A status column on every one of about 24,000 quotes. 100% populated, clean
-sensible-looking values, dominated by `With Client` and `Quote`. **Nothing writes to it
-and nothing reads it.**
+sensible-looking values dominated by `With Client` and `Quote`. **Nothing writes to it and
+nothing reads it.**
 
 **`Successful`: 44.** Across sixteen years.
 
 It ships with the job system. This business never wired it up, because quote outcome is
-tracked elsewhere by decision. The field is not neglected, it is **unused**, and those
-are different states with the same symptom.
+tracked elsewhere by decision. The field is not neglected, it is **unused**, and those are
+different states with the same symptom.
 
 ## What a reader will conclude if they trust it
 
 A conversion rate of about **0.2%**.
 
-The number is not obviously broken: a low win rate is a plausible business fact,
-alarming enough to be escalated, specific enough to be believed, from a fully-populated
-column in a table that is otherwise trustworthy. Nothing about the query looks wrong.
-Nothing warns.
+The number is not obviously broken: a low win rate is a plausible business fact, alarming
+enough to be escalated, specific enough to be believed, from a fully-populated column in
+a table that is otherwise trustworthy. Nothing warns.
 
 This is the shape of every ghost: **it answers.**
 
-## The size of the error
+## The trap behind the trap
 
-Computed properly, from [quote_orders](quote-orders.md) and inside its coverage window,
-the figure is **roughly three in four**.
+Kill the 0.2% and a second wrong answer is waiting.
 
-Not 0.2%. Around a 400-fold error, from a column that returns a clean value with no
-warning of any kind.
+Do it "properly" instead, counting quotes with a row in
+[quote_orders](quote-orders.md) inside its coverage window and allowing 90 days to settle,
+and you get roughly **three in four**. Stable across six cuts, too.
 
-The band is stated rather than a number, on purpose. It held between about 75% and 80%
-across six independent cuts: three quote windows crossed with two settling lags of 90
-and 180 days. Windows that stable are worth reporting as a band and worth nothing as a
-decimal.
+**That number is also wrong**, for a reason no care with the query will fix. The
+denominator is not "quotes we gave", it is **"quotes somebody chose to enter"**. A quote
+keyed in when the job looks serious, or after it has already landed, is in the table. A
+price given over the phone and lost never was. Historic practice was looser still. The
+losses are missing from the bottom of the fraction, so the fraction climbs.
 
-**How to redo it, because you should not trust this line either.** Count quotes dated
-inside the coverage window, allow at least 90 days for them to settle, and count how
-many have a row in `quote_orders`. Two caveats travel with the answer: it is a count of
-quotes, not a value, and it will read high if quotes are sometimes raised as paperwork
-for work already agreed.
+Three defects, stacked, each sufficient alone:
 
-## Where the answer actually lives
+| Defect | Effect |
+|---|---|
+| `status` unmaintained | Gives 0.2%. Absurd, so it gets caught |
+| `quote_orders` coverage-bounded | Older quotes read unconverted either way |
+| **Quote population self-selected** | Denominator missing its losses. Unfixable by query |
+
+The third is the dangerous one, because a careful reader defeats the first two and lands
+on 76% feeling rigorous.
+
+## One question you can ask, one you cannot
+
+**"Did this specific quote convert?"** Answerable, as a fact. Use
+[quote_orders](quote-orders.md) inside its window. That is what the chase digest runs on.
+
+**"What is our conversion rate?"** Not answerable here. Not from this column, not from the
+link table, not from both.
 
 Ruled July 2026 and standing: **the job system holds what was quoted, the project board
-holds what happened to it.** Two systems, one question each. That decision is why this
-column is empty of meaning.
-
-Use **[quote_orders](quote-orders.md)** inside its coverage window, the job system's own
-quote-to-order mapping, bounded to roughly mid-2025 onward with a hard edge. Outside
-that window, the project board.
-
-No card here carries a conversion figure, deliberately. Ratios go stale, and a stale
-number in a card a reader has chosen not to check becomes the most authoritative-looking
-ghost in the territory.
+holds what happened to it.** That is why this column is empty of meaning, and why the rate
+lives outside this map. No card here carries a conversion figure, deliberately.
 
 ## Hits
 
-- Nothing. No script reads it, no process writes it. That is what makes it a ghost
-  rather than a leftover.
-- [quote_orders](quote-orders.md) is not a dependant, but it is the object that
-  **disproves** this one and replaces it. If you open one other card, open that.
+- Nothing. No script reads it, no process writes it. That is what makes it a ghost rather
+  than a leftover.
+- [quote_orders](quote-orders.md) is not a dependant, but it **disproves** this one. If
+  you open one other card, open that.
 
 ## Does not hit
 
-- **Conversion.** The one thing its name promises. The real answer is
-  [quote_orders](quote-orders.md), which exists precisely because this column does not
-  work, and which has a hard coverage bound you must read first.
+- **A conversion rate.** The thing its name promises, and the thing this territory cannot
+  produce, because the recorded quote population is self-selected.
+- **[quote_orders](quote-orders.md), as a replacement.** Right answer to a *different*
+  question. Reaching for it to build a rate carries the population problem across, and the
+  result looks rigorous.
